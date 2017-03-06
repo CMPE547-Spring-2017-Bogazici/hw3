@@ -18,25 +18,25 @@ with open('transitions.csv') as csvfile:
 
 
 # Note: np.random.choice ValueError: probabilities do not sum to 1
-def get_probality(current, normalize=True):
-    """Get probality of next strings with respect to given current one.
+def get_probability(current, normalize=True):
+    """Get probability of next strings with respect to given current one.
 
     :param normalize: normalize the list to have sum 1  (default: True)
-    :param current: current item                        (note that x_0 is '.')
-    :return: probality list of all possible characters
+    :param current:   current item                      (note that x_0 is '.')
+    :return:          probability list of all possible characters
     """
     l = [float(i) for i in transitions[letter_ids[current]]]
     return [float(i) / sum(l) for i in l] if normalize else l
 
 
 # Test if the function is true, check with given example
-assert str(get_probality('q', False)[letter_ids['u']]) == '0.9949749'
+assert str(get_probability('q', False)[letter_ids['u']]) == '0.9949749'
 
 
 def sample_random_string(n):
     """For a given n, write a program to sample random strings with letters.
 
-    x_1, x_2, ..., x_n from get_probality(x_{1:N}|x_0)
+    x_1, x_2, ..., x_n from get_probability(x_{1:N}|x_0)
 
     :param n: length of sample string
     :return:  sample random string
@@ -44,7 +44,7 @@ def sample_random_string(n):
     current_char, random_string = '.', ''
     for i in xrange(10):
         random_string += current_char
-        probabilities = get_probality(current_char)
+        probabilities = get_probability(current_char)
         current_char = np.random.choice(
             alphabet, p=probabilities)
     return random_string
