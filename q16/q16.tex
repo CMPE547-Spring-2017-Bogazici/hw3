@@ -1,0 +1,86 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% This LaTeX file typesets the User's Guide for fbe_tez.sty.
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% written by Race Condition
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+
+\documentclass[12pt]{article}
+\usepackage{float}
+\usepackage[bottom]{footmisc}
+\usepackage{cite}
+\usepackage{graphicx}
+\usepackage{longtable}
+\graphicspath{{figures/}} % Graphics will be here
+\usepackage{tabularx,ragged2e,booktabs,caption}
+\usepackage[T1]{fontenc}
+\usepackage[toc,page]{appendix} % APPENDIX
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\usepackage{enumitem} % ENUMERATE
+
+
+\begin{document}
+
+
+
+
+\iffalse
+\begin {table}[H]
+\begin{tabular}{|c|c|c|c|c|c|} \hline 
+$P(x_t ,x_{t-1})$ & $x_t=$`a' & $x_t=$`b' & $x_t=$`c' & $x_t=$`d' & $x_t=$`e' \\ 
+\hline  
+$x_{t-1}=$`a' & $2/53$ & $8/53$ & $1/53$ & $1/53$ & $1/53$ \\ \hline 
+$x_{t-1}=$`b' & $2/53$ & $7/53$ & $1/53$ & $1/53$ & $1/53$ \\ \hline 
+$x_{t-1}=$`c' & $3/53$ & $4/53$ & $1/53$ & $1/53$ & $1/53$ \\ \hline 
+$x_{t-1}=$`d' & $2/53$ & $1/53$ & $1/53$ & $1/53$ & $3/53$ \\ \hline 
+$x_{t-1}=$`e' & $3/53$ & $1/53$ & $1/53$ & $1/53$ & $4/53$ \\ \hline 
+\end{tabular}
+\end{table}
+\fi
+
+
+
+
+\iffalse
+\begin {table}[H]
+\begin{tabular}{|c|c|c|} \hline 
+$P(x_t ,x_{t-1})$ & $x_t=1$ & $x_t=0$  \\ 
+\hline  
+$x_{t-1}=1$ & $24/65$ & $11/65$ \\ \hline 
+$x_{t-1}=0$ & $11/65$ & $19/65$ \\ \hline 
+\end{tabular}
+\end{table}
+\fi
+
+
+
+
+\iffalse
+\begin {table}[H]
+\begin{tabular}{|c|c|c|} \hline 
+$P(Y_t |S_t)$ & $S_t$  \\ 
+\hline  
+$Y_t=S_t$ & $q$\\ \hline 
+$Y_t=R$ & $1-q$\\ \hline 
+\end{tabular}
+\end{table}
+\fi
+
+
+\begin {table}[H]
+\begin{tabular}{|c|c|} \hline 
+$P(S_t |S_{t-1})$ & $S_{t-1}$  \\ 
+\hline  
+$S_t=S_{t-1}$ & $p$\\ \hline 
+$S_t=k$ & $1-p$\\ \hline 
+\end{tabular}
+\end{table}
+
+
+
+\end{document}
+
