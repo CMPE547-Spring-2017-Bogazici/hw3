@@ -50,4 +50,36 @@ def sample_random_string(n):
     return random_string
 
 
-print(sample_random_string(10))
+for i in np.random.randint(low=1, high=10, size=10):
+    print('length: {}, text: {}'.format(i, sample_random_string(i)))
+
+
+def string_guess(string):
+    """Guess the original string.
+
+    :param string: string with missing letters
+    :return:       full string
+    """
+    missing_indices = [pos for pos, char in enumerate(string) if char == '_']
+    string = list(string)
+    for i in missing_indices:
+        prev_char = string[i-1] if i > 0 else '.'
+        probabilities = get_probability(prev_char)
+        string[i] = np.random.choice(
+            alphabet, p=probabilities)
+    return ''.join(string)
+
+
+def display_string_guess(l_params, times):
+    """Display the guess string in meaningful way.
+
+    :param l_params: list of params you want to test (string list)
+    :param times:    how many times you want to test (integer)
+    """
+    for param in l_params:
+        for t in range(1, times+1):
+            print('"{}" string, try number {:>2}: "{}"'.format(
+                param, t, string_guess(param)))
+
+
+display_string_guess(['t__.'], 10)
