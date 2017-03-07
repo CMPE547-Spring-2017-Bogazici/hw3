@@ -43,10 +43,10 @@ def sample_random_string(n):
     """
     current_char, random_string = '.', ''
     for i in xrange(n):
-        random_string += current_char
         probabilities = get_probability(current_char)
         current_char = np.random.choice(
             alphabet, p=probabilities)
+        random_string += current_char
     return random_string
 
 
